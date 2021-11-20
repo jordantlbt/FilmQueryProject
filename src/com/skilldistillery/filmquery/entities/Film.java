@@ -10,6 +10,10 @@ public class Film {
 	private String description;
 	private int releaseYear;
 	private int languageId;
+<<<<<<< HEAD
+=======
+	private String language;
+>>>>>>> 67d0567b4724708965907f310c458672db5a4e56
 	private int rentalDuration;
 	private double rentalRate;
 	private int length;
@@ -20,8 +24,32 @@ public class Film {
 	
 	
 
+<<<<<<< HEAD
 	public Film(int id, String title, String description, int releaseYear, int languageId, int rentalDuration,
 			double rentalRate, int length, double replacementCost, String rating2, String specialFeatures) {
+=======
+	public Film(int id, String title, String description, int releaseYear, int languageId, String language,
+			int rentalDuration, double rentalRate, int length, double replacementCost, String rating,
+			String specialFeatures, List<Actor> actors) {
+		super();
+		this.id = id;
+		this.title = title;
+		this.description = description;
+		this.releaseYear = releaseYear;
+		this.languageId = languageId;
+		this.language = language;
+		this.rentalDuration = rentalDuration;
+		this.rentalRate = rentalRate;
+		this.length = length;
+		this.replacementCost = replacementCost;
+		this.rating = rating;
+		this.specialFeatures = specialFeatures;
+		this.actors = actors;
+	}
+
+
+	public Film() {
+>>>>>>> 67d0567b4724708965907f310c458672db5a4e56
 	
 	}
 
@@ -65,6 +93,19 @@ public class Film {
 	public void setLanguageId(int languageId) {
 		this.languageId = languageId;
 	}
+<<<<<<< HEAD
+=======
+	
+	public String getLanguage() {
+		return language;
+	}
+
+
+	public void setLanguage(String language) {
+		this.language = language;
+	}
+
+>>>>>>> 67d0567b4724708965907f310c458672db5a4e56
 
 	public int getRentalDuration() {
 		return rentalDuration;
@@ -125,6 +166,7 @@ public class Film {
 	@Override
 	public String toString() {
 		return "Film [id=" + id + ", title=" + title + ", description=" + description + ", releaseYear=" + releaseYear
+<<<<<<< HEAD
 				+ ", languageId=" + languageId + ", rentalDuration=" + rentalDuration + ", rentalRate=" + rentalRate
 				+ ", length=" + length + ", replacementCost=" + replacementCost + ", rating=" + rating
 				+ ", specialFeatures=" + specialFeatures + ", actors=" + actors + "]";
@@ -133,6 +175,26 @@ public class Film {
 	@Override
 	public int hashCode() {
 		return Objects.hash(actors, description, id, languageId, length, rating, releaseYear, rentalDuration,
+=======
+				+ ", languageId=" + languageId + ", language=" + language + ", rentalDuration=" + rentalDuration
+				+ ", rentalRate=" + rentalRate + ", length=" + length + ", replacementCost=" + replacementCost
+				+ ", rating=" + rating + ", specialFeatures=" + specialFeatures + ", actors=" + actors + "]";
+	}
+	
+	public String printString() {
+		String print = "Title: " + getTitle() + "\nDescription: " + getDescription() 
+		+ "\nRelease Year: " + getReleaseYear()
+		+ "\nRental Duration: " + getRentalDuration() + " days" + "\nRental Rate: $" + getRentalRate()
+		+ "\nReplacement Cost: $" + getReplacementCost()
+		+ "\nRating: " + getRating() + "\nSpecial Features: " + getSpecialFeatures();
+				
+		return print;
+	}
+	
+	@Override
+	public int hashCode() {
+		return Objects.hash(actors, description, id, language, languageId, length, rating, releaseYear, rentalDuration,
+>>>>>>> 67d0567b4724708965907f310c458672db5a4e56
 				rentalRate, replacementCost, specialFeatures, title);
 	}
 
@@ -146,11 +208,21 @@ public class Film {
 			return false;
 		Film other = (Film) obj;
 		return Objects.equals(actors, other.actors) && Objects.equals(description, other.description) && id == other.id
+<<<<<<< HEAD
 				&& languageId == other.languageId && length == other.length && rating == other.rating
 				&& releaseYear == other.releaseYear && rentalDuration == other.rentalDuration
+=======
+				&& Objects.equals(language, other.language) && languageId == other.languageId && length == other.length
+				&& Objects.equals(rating, other.rating) && releaseYear == other.releaseYear
+				&& rentalDuration == other.rentalDuration
+>>>>>>> 67d0567b4724708965907f310c458672db5a4e56
 				&& Double.doubleToLongBits(rentalRate) == Double.doubleToLongBits(other.rentalRate)
 				&& Double.doubleToLongBits(replacementCost) == Double.doubleToLongBits(other.replacementCost)
 				&& Objects.equals(specialFeatures, other.specialFeatures) && Objects.equals(title, other.title);
 	}
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 67d0567b4724708965907f310c458672db5a4e56
