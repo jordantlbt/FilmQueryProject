@@ -14,8 +14,7 @@ public class Actor {
 		
 	}
 
-<<<<<<< HEAD
-=======
+
 	public Actor(int id, String firstName, String lastName, List<Film> films) {
 		super();
 		this.id = id;
@@ -24,7 +23,7 @@ public class Actor {
 		this.films = films;
 	}
 
->>>>>>> 67d0567b4724708965907f310c458672db5a4e56
+
 	public int getId() {
 		return id;
 	}
@@ -79,8 +78,8 @@ public class Actor {
 	}
 
 
-<<<<<<< HEAD
+
 }
-=======
-}
->>>>>>> 67d0567b4724708965907f310c458672db5a4e56
+
+
+

@@ -12,15 +12,6 @@ import com.skilldistillery.filmquery.entities.Actor;
 import com.skilldistillery.filmquery.entities.Film;
 
 public class DatabaseAccessorObject implements DatabaseAccessor {
-<<<<<<< HEAD
-	
-	private static final String URL = "jdbc:mysql://localhost:3306/sdvid?useSSL=false";
-	
-	private static Connection conn;
-	
-	public DatabaseAccessorObject() throws ClassNotFoundException {
-		Class.forName("com.mysql.jdbc.Driver");
-=======
 
 	private static final String URL = "jdbc:mysql://localhost:3306/sdvid?useSSL=false";
 	private static Connection conn;
@@ -28,20 +19,21 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 	private static final String pass = "student";
 
 	public DatabaseAccessorObject() {
+		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-
 		} catch (ClassNotFoundException e) {
+			
 			e.printStackTrace();
 		}
->>>>>>> 67d0567b4724708965907f310c458672db5a4e56
 	}
+
+
+
 
 	@Override
 	public Film findFilmById(int filmId) {
-<<<<<<< HEAD
-		return null;
-=======
+
 		Film film = null;
 
 		try {
@@ -78,33 +70,12 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 		}
 
 		return film;
->>>>>>> 67d0567b4724708965907f310c458672db5a4e56
 
 	}
 
 	@Override
 	public Actor findActorById(int actorId) {
-<<<<<<< HEAD
-		Actor actor = null;
 
-		String sql = "SELECT id, first_name, last_name FROM actor WHERE id = ?";
-		PreparedStatement stmt = conn.prepareStatement(sql); // cant reach conn
-		stmt.setInt(1, actorId);
-		ResultSet actorResult = stmt.executeQuery();         
-
-		if (actorResult.next()) {
-			
-			actor = new Actor(); // Create the object
-			
-			// Here is our mapping of query columns to our object fields:
-			actor.setId(actorResult.getInt("id"));
-			actor.setFirstName(actorResult.getString("first_name"));
-			actor.setLastName(actorResult.getString("last_name"));
-			actor.films(findActorsByFilmId(actorId)); // ?????
-		}
-		
-		return actor;
-=======
 
 		Actor actor = null;
 
@@ -133,50 +104,16 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 
 		return actor;
 
->>>>>>> 67d0567b4724708965907f310c458672db5a4e56
+
 	}
 
 	@Override
 	public List<Actor> findActorsByFilmId(int filmId) {
 
-<<<<<<< HEAD
-		List<Film> films = new ArrayList<>();
+
+	
 		String user = "student";
 		String pass = "student";
-		
-		try {
-			conn = DriverManager.getConnection(URL, user, pass);
-			
-			String sql = "SELECT id, title, description, release_year, language_id, rental_duration, ";
-			sql += " rental_rate, length, replacement_cost, rating, special_features "
-					+ " FROM film JOIN film_actor ON film.id = film_actor.film_id " + " WHERE actor_id = ?";
-			
-			PreparedStatement stmt = conn.prepareStatement(sql);
-			stmt.setInt(1, filmId);
-			ResultSet rs = stmt.executeQuery();
-			
-			while (rs.next()) {
-				int actorId = rs.getInt("id");
-				String title = rs.getString("title");
-				String description = rs.getString("description");
-				int releaseYear = rs.getShort("release_year");
-				int languageId = rs.getInt("language_id");
-				int rentalDuration = rs.getInt("rental_duration");
-				double rentalRate = rs.getDouble("rental_rate");
-				int length = rs.getInt("length");
-				double replacementCost = rs.getDouble("replacement_cost");
-				String rating = rs.getString("rating");
-				String specialFeatures = rs.getString("special_features");
-				
-				Film film = new Film(filmId, title, description, releaseYear, languageId, rentalDuration, 
-						rentalRate, length, replacementCost, rating, specialFeatures);
-				
-				films.add(film);
-			}
-			rs.close();
-			stmt.close();
-			conn.close();
-=======
 		List<Actor> actors = new ArrayList<>();
 		Actor actor = null;
 
@@ -206,17 +143,17 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 	
 			conn.close();
 			
->>>>>>> 67d0567b4724708965907f310c458672db5a4e56
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return actors;
-<<<<<<< HEAD
+
 	}
 
-=======
+
 		
-	}
+	
 
 	
 	@Override
@@ -296,5 +233,5 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 		return language;
 
 	}
->>>>>>> 67d0567b4724708965907f310c458672db5a4e56
+
 }
