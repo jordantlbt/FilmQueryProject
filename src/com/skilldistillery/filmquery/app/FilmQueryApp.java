@@ -133,7 +133,7 @@ public class FilmQueryApp {
 		}
 	}
 
-	//test test test 
+	//Print menu for users
 	private void printMenu() {
 
 		System.out.println("=====================================");
