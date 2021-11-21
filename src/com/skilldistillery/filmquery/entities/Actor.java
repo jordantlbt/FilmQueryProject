@@ -77,7 +77,7 @@ public class Actor {
 		return Objects.equals(firstName, other.firstName) && id == other.id && Objects.equals(lastName, other.lastName);
 	}
 
-
+//
 
 }
 

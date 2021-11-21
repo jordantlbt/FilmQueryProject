@@ -164,7 +164,7 @@ public class Film {
 	}
 
 
-	
+	//user friendly toString
 	public String printString() {
 		String print = "Title: " + getTitle() + "\nDescription: " + getDescription() 
 		+ "\nRelease Year: " + getReleaseYear()

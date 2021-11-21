@@ -166,6 +166,7 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 
 			conn = DriverManager.getConnection(URL, user, pass);
 			
+			//do not need ' ' in prepared statement when using them in setString
 			String sql = "SELECT * FROM film WHERE description LIKE ? OR title LIKE ?";
 			
 			PreparedStatement stmt = conn.prepareStatement(sql);
