@@ -168,10 +168,20 @@ public class Film {
 	public String printString() {
 		String print = "Title: " + getTitle() + "\nDescription: " + getDescription() 
 		+ "\nRelease Year: " + getReleaseYear()
+		+ "\nRating: " + getRating()
+		+ "\nRental Duration: " + getRentalDuration() + " days" + "\nRental Rate: $" + getRentalRate();
+				
+		return print;
+	}
+	
+	//user friendly toString with all data
+	public String printStringAllData() {
+		String print = "Title: " + getTitle() + "\nDescription: " + getDescription() 
+		+ "\nRelease Year: " + getReleaseYear()
 		+ "\nRental Duration: " + getRentalDuration() + " days" + "\nRental Rate: $" + getRentalRate()
 		+ "\nReplacement Cost: $" + getReplacementCost()
 		+ "\nRating: " + getRating() + "\nSpecial Features: " + getSpecialFeatures();
-				
+		
 		return print;
 	}
 	
